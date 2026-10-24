@@ -1,25 +1,15 @@
 import Card from '../../components/ui/Card.jsx'
 import { loyalty } from '../../data/mockData.js'
 
-// A stamp card: one dot per visit, filled as the customer earns them.
+// Shows how many times the customer has had a haircut — no rewards, just the count.
 export default function LoyaltyCard() {
-  const { visits, visitsForReward, rewardLabel } = loyalty
-  const remaining = visitsForReward - visits
+  const { visits } = loyalty
 
   return (
-    <Card title="Stämpelkort">
-      <div className="grid grid-cols-5 gap-2">
-        {Array.from({ length: visitsForReward }, (_, i) => (
-          <div
-            key={i}
-            className={`aspect-square rounded-full border-2 ${
-              i < visits ? 'border-brand bg-brand' : 'border-zinc-700'
-            }`}
-          />
-        ))}
-      </div>
-      <p className="mt-3 text-sm text-zinc-400">
-        {remaining > 0 ? `${remaining} besök kvar till ${rewardLabel.toLowerCase()}` : `${rewardLabel} väntar!`}
+    <Card title="Dina besök">
+      <p className="text-5xl font-bold text-brand tabular-nums">{visits}</p>
+      <p className="mt-2 text-zinc-300">
+        {visits === 1 ? 'klippning' : 'klippningar'} hos oss
       </p>
     </Card>
   )

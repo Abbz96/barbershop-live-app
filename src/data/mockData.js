@@ -3,8 +3,6 @@
 
 export const loyalty = {
   visits: 7,
-  visitsForReward: 10,
-  rewardLabel: 'Gratis klippning',
 }
 
 export const services = [

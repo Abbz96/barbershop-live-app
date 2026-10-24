@@ -7,8 +7,7 @@ Tailwind CSS and React Router.
 
 - **Live queue** — customers see their place in line and an estimated wait time
   in real time; barbers call the next customer from their own view.
-- **Loyalty stats** — a digital stamp card that tracks visits and unlocks
-  rewards (e.g. every 10th cut free).
+- **Loyalty stats** — customers see how many times they have had a haircut.
 - **Swish payment UI** — pay for the visit with Swish straight from the phone.
   The real integration must run through a backend using the Swish Commerce API.
 
@@ -44,7 +43,7 @@ src/
 │   ├── layout/               # Shared shell: Layout, Header, BottomNav
 │   └── ui/                   # Reusable building blocks (Card)
 ├── features/
-│   ├── dashboard/            # Customer view: stamp card, Swish button
+│   ├── dashboard/            # Customer view: visit count, Swish button
 │   ├── admin/                # Barber view page
 │   └── shopStatus/           # Live status widget (customer) + barber controls
 ├── services/                 # Data sources — swap these for a real backend
