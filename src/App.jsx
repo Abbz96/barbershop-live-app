@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout.jsx'
 import UserDashboard from './features/dashboard/UserDashboard.jsx'
 import AdminDashboard from './features/admin/AdminDashboard.jsx'
 import ProfilePage from './features/profile/ProfilePage.jsx'
+import CheckoutPage from './features/checkout/CheckoutPage.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 // All pages share <Layout>, which renders the header, bottom nav and an <Outlet>
@@ -14,6 +15,7 @@ export default function App() {
         <Route index element={<Navigate to="/dashboard" replace />} />
         <Route path="dashboard" element={<UserDashboard />} />
         <Route path="profil" element={<ProfilePage />} />
+        <Route path="betala" element={<CheckoutPage />} />
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Route>

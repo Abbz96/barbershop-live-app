@@ -1,8 +1,8 @@
+import { Link } from 'react-router-dom'
 import LiveShopStatus from '../shopStatus/LiveShopStatus.jsx'
 import LoyaltyCard from './LoyaltyCard.jsx'
-import SwishPayButton from './SwishPayButton.jsx'
 
-// The customer's view: is it worth coming in now, how close is my reward, pay.
+// The customer's view: is it worth coming in now, my visits, pay.
 export default function UserDashboard() {
   return (
     <div className="space-y-4">
@@ -11,7 +11,12 @@ export default function UserDashboard() {
         <LiveShopStatus />
         <LoyaltyCard />
       </div>
-      <SwishPayButton amountSek={500} />
+      <Link
+        to="/betala"
+        className="block w-full rounded-2xl bg-brand py-4 text-center font-semibold text-zinc-950 transition-colors hover:bg-brand-dark"
+      >
+        Betala ditt besök
+      </Link>
     </div>
   )
 }

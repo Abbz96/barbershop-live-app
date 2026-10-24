@@ -25,6 +25,11 @@ Frontend only — there is no backend, login, or real payment yet.
   customer's usual rhythm and the full visit history. The history is generated
   mock data (`src/data/visitHistory.js`), read through
   `src/services/visitStatsService.js`.
+- **Checkout** (`/betala`) is a full payment UI: choose a service, see the
+  summary with VAT, pay with Swish, card or Apple Pay, wait on a processing
+  screen, get a digital receipt. Payments are faked in
+  `src/services/paymentService.js` — nothing is charged and no card data is
+  sent anywhere. Real payments need a backend (Swish Commerce API / Stripe).
 - Services and prices are mocked in `src/data/mockData.js`.
 
 ## Getting started
@@ -47,7 +52,8 @@ src/
 │   ├── layout/               # Shared shell: Layout, Header, BottomNav
 │   └── ui/                   # Reusable building blocks (Card)
 ├── features/
-│   ├── dashboard/            # Customer view: visit count, Swish button
+│   ├── dashboard/            # Customer home: live status, visit count, pay link
+│   ├── checkout/             # Payment flow: service → pay → processing → receipt
 │   ├── profile/              # Mina sidor: yearly total, monthly chart, history
 │   ├── admin/                # Barber view page
 │   └── shopStatus/           # Live status widget (customer) + barber controls
@@ -63,5 +69,6 @@ src/
 | ------------ | ----------------------- |
 | `/dashboard` | Customer dashboard      |
 | `/profil`    | Mina sidor (statistics) |
+| `/betala`    | Checkout                |
 | `/admin`     | Barber / admin view     |
 | `*`          | 404 page                |
