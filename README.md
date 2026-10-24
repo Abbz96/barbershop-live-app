@@ -21,7 +21,11 @@ Frontend only — there is no backend, login, or real payment yet.
   tabs on the same device. A demo simulation adds fake customer traffic and can
   be switched off in the barber view. Syncing between devices needs a backend
   (e.g. Supabase Realtime) — only that service file has to change.
-- Loyalty and service data are mocked in `src/data/mockData.js`.
+- **Mina sidor** (`/profil`) shows haircuts this year, a per-month chart, the
+  customer's usual rhythm and the full visit history. The history is generated
+  mock data (`src/data/visitHistory.js`), read through
+  `src/services/visitStatsService.js`.
+- Services and prices are mocked in `src/data/mockData.js`.
 
 ## Getting started
 
@@ -44,6 +48,7 @@ src/
 │   └── ui/                   # Reusable building blocks (Card)
 ├── features/
 │   ├── dashboard/            # Customer view: visit count, Swish button
+│   ├── profile/              # Mina sidor: yearly total, monthly chart, history
 │   ├── admin/                # Barber view page
 │   └── shopStatus/           # Live status widget (customer) + barber controls
 ├── services/                 # Data sources — swap these for a real backend
@@ -57,5 +62,6 @@ src/
 | Path         | View                    |
 | ------------ | ----------------------- |
 | `/dashboard` | Customer dashboard      |
+| `/profil`    | Mina sidor (statistics) |
 | `/admin`     | Barber / admin view     |
 | `*`          | 404 page                |

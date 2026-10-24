@@ -5,7 +5,7 @@ import { navItems } from './navItems.js'
 export default function BottomNav() {
   return (
     <nav className="sm:hidden fixed bottom-0 inset-x-0 z-10 border-t border-zinc-800 bg-zinc-950/95 backdrop-blur pb-[env(safe-area-inset-bottom)]">
-      <ul className="grid grid-cols-2">
+      <ul className="grid grid-cols-3">
         {navItems.map((item) => (
           <li key={item.to}>
             <NavLink
