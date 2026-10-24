@@ -1,10 +1,13 @@
 import { Outlet } from 'react-router-dom'
 import Header from './Header.jsx'
 import BottomNav from './BottomNav.jsx'
+import { useShopSimulation } from '../../hooks/useShopStatus.js'
 
 // Mobile-first shell: a narrow centred column with a fixed bottom nav on phones.
 // On wider screens the column simply grows and the nav moves into the header.
 export default function Layout() {
+  useShopSimulation()
+
   return (
     <div className="min-h-dvh flex flex-col">
       <Header />

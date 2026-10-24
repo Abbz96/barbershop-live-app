@@ -14,8 +14,15 @@ Tailwind CSS and React Router.
 
 ## Status
 
-Frontend boilerplate only. All data is mocked in `src/data/mockData.js`; there
-is no backend, login, or real payment yet.
+Frontend only — there is no backend, login, or real payment yet.
+
+- **Live shop status** works with a mock service
+  (`src/services/shopStatusService.js`). The barber view controls status, queue
+  and chairs; the customer view updates instantly. Changes sync between browser
+  tabs on the same device. A demo simulation adds fake customer traffic and can
+  be switched off in the barber view. Syncing between devices needs a backend
+  (e.g. Supabase Realtime) — only that service file has to change.
+- Loyalty and service data are mocked in `src/data/mockData.js`.
 
 ## Getting started
 
@@ -37,8 +44,11 @@ src/
 │   ├── layout/               # Shared shell: Layout, Header, BottomNav
 │   └── ui/                   # Reusable building blocks (Card)
 ├── features/
-│   ├── dashboard/            # Customer view: queue, stamp card, Swish button
-│   └── admin/                # Barber view: queue manager, stats
+│   ├── dashboard/            # Customer view: stamp card, Swish button
+│   ├── admin/                # Barber view page
+│   └── shopStatus/           # Live status widget (customer) + barber controls
+├── services/                 # Data sources — swap these for a real backend
+├── hooks/                    # React hooks that read from the services
 ├── pages/                    # Standalone pages (404)
 └── data/                     # Mock data until a backend exists
 ```
